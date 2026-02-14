@@ -1,0 +1,103 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "App for ADHD women in perimenopause providing support, ideas, and coping mechanisms.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Warm, calming abstract floral illustration with earthy tones (home-hero.dim_1600x900.png)\n- Minimal line-art icon set in warm neutral tones: brain, moon, heart, checklist (icon-set.dim_512x512.png)\n- Soft gradient background texture in sage/cream/terracotta palette (bg-texture.dim_1920x1080.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-the-core-app-information-architecture-and-navigation-for-an-app-focused-on-adhd-women-in-perimenopause-with-sections-for-home-coping-toolkit-topics-library-daily-check-in-journal-and-saved-favorites",
+      "title": "Create the core app information architecture and navigation for an app focused on ADHD women in perimenopause, with sections for: Home, Coping Toolkit, Topics/Library, Daily Check-in, Journal, and Saved/Favorites.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-coherent-visual-theme-and-design-system-for-the-app-colors-typography-spacing-components-with-a-calm-supportive-style-suitable-for-perimenopause-adhd-avoid-blue-purple-as-primary-colors",
+      "title": "Implement a coherent visual theme and design system for the app (colors, typography, spacing, components) with a calm, supportive style suitable for perimenopause + ADHD. Avoid blue/purple as primary colors.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-coping-toolkit-feature-that-lets-users-browse-coping-mechanisms-as-cards-and-filter-by-category-e-g-focus-executive-function-emotional-regulation-sleep-hot-flashes-night-sweats-brain-fog-anxiety-relationships-work-self-care",
+      "title": "Build a Coping Toolkit feature that lets users browse coping mechanisms as cards and filter by category (e.g., Focus/Executive Function, Emotional Regulation, Sleep, Hot Flashes/Night Sweats, Brain Fog, Anxiety, Relationships, Work, Self-care).",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-topics-library-section-with-short-structured-educational-content-tailored-to-adhd-perimenopause-e-g-hormones-attention-overwhelm-loops-sensory-sensitivity-sleep-changes-include-a-friendly-disclaimer-that-the-content-is-not-medical-advice",
+      "title": "Create a Topics/Library section with short, structured educational content tailored to ADHD + perimenopause (e.g., hormones & attention, overwhelm loops, sensory sensitivity, sleep changes). Include a friendly disclaimer that the content is not medical advice.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-daily-check-in-flow-where-users-can-quickly-log-today-s-state-using-simple-sliders-buttons-e-g-focus-mood-energy-sleep-quality-hot-flash-severity-anxiety-irritability-and-optional-notes",
+      "title": "Implement a Daily Check-in flow where users can quickly log today’s state using simple sliders/buttons (e.g., focus, mood, energy, sleep quality, hot flash severity, anxiety/irritability) and optional notes.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-journal-feature-for-free-form-entries-with-optional-prompts-relevant-to-the-audience-e-g-what-felt-hardest-today-what-helped-even-a-little-what-s-one-kind-thing-i-can-do-for-myself",
+      "title": "Add a Journal feature for free-form entries with optional prompts relevant to the audience (e.g., ‘What felt hardest today?’, ‘What helped even a little?’, ‘What’s one kind thing I can do for myself?’).",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-saved-favorites-so-users-can-bookmark-coping-mechanisms-and-library-topics-and-access-them-in-one-place",
+      "title": "Add Saved/Favorites so users can bookmark coping mechanisms and library topics and access them in one place.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-internet-identity-sign-in-and-ensure-all-user-specific-data-check-ins-journal-entries-saved-items-is-scoped-to-the-authenticated-user-principal-allow-read-only-browsing-of-general-content-without-sign-in",
+      "title": "Implement Internet Identity sign-in and ensure all user-specific data (check-ins, journal entries, saved items) is scoped to the authenticated user principal; allow read-only browsing of general content without sign-in.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-generated-static-illustrations-and-use-them-in-the-ui-e-g-on-home-and-empty-states-from-frontend-public-assets-generated-without-routing-images-through-the-backend",
+      "title": "Add generated static illustrations and use them in the UI (e.g., on Home and empty states) from frontend/public/assets/generated, without routing images through the backend.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create an app focused on ADHD women in perimenopause with help and ideas for coping mechanisms.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Backend: define and expose Motoko actor methods to (1) list coping mechanisms and topics, and (2) CRUD user-specific records (check-ins, journal entries, saved items) with stable persistence.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Coping & Support App for ADHD Women in Perimenopause",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

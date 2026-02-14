@@ -1,0 +1,22 @@
+{
+  "frontend/src/App.tsx": "Main application component with TanStack Router setup, theme provider, and all route definitions for the app.",
+  "frontend/src/components/AppLayout.tsx": "Layout wrapper component that provides consistent structure with navigation, main content area, footer, and profile setup modal.",
+  "frontend/src/components/PrimaryNav.tsx": "Responsive navigation header with mobile menu, route highlighting, and user profile display.",
+  "frontend/src/components/Footer.tsx": "Footer component with copyright, attribution link to caffeine.ai with UTM tracking, and medical disclaimer.",
+  "frontend/src/components/auth/LoginButton.tsx": "Authentication button component that handles Internet Identity login/logout with loading states.",
+  "frontend/src/components/auth/ProfileSetupModal.tsx": "Modal dialog for first-time user profile setup to collect display name.",
+  "frontend/src/components/auth/RequireAuth.tsx": "Guard component that shows sign-in prompt for unauthenticated users trying to access protected features.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for all backend operations including user profiles, coping mechanisms, check-ins, journal entries, and saved items.",
+  "frontend/src/pages/HomePage.tsx": "Landing page with hero section, feature cards, and supportive messaging with generated hero image.",
+  "frontend/src/pages/Toolkit/ToolkitListPage.tsx": "Browsable list of coping mechanisms with category filtering using tabs, now using proper CopingCategory enum values and typed router links.",
+  "frontend/src/pages/Toolkit/ToolkitDetailPage.tsx": "Detail view for individual coping mechanisms with save/bookmark functionality.",
+  "frontend/src/pages/Library/LibraryListPage.tsx": "List of educational topics with medical disclaimer alert, now using typed router links with params.",
+  "frontend/src/pages/Library/TopicDetailPage.tsx": "Detail view for library topics with structured content sections and save functionality.",
+  "frontend/src/pages/CheckIn/CheckInPage.tsx": "Daily check-in form with sliders for tracking multiple metrics and history list, gated by authentication, now using typed router links with params.",
+  "frontend/src/pages/CheckIn/CheckInDetailPage.tsx": "Read-only detail view for past check-in entries showing all tracked metrics.",
+  "frontend/src/pages/Journal/JournalPage.tsx": "Journal interface with optional prompts, free-form text entry, and chronological entry list, gated by authentication.",
+  "frontend/src/pages/Saved/SavedPage.tsx": "Unified view of saved coping mechanisms and library topics with empty state using generated icon set image, now using typed router links with params.",
+  "frontend/src/content/libraryTopics.ts": "Static content data for educational library topics covering ADHD and perimenopause intersection.",
+  "frontend/src/index.css": "Global styles with OKLCH-based sage and terracotta color system for light and dark modes.",
+  "frontend/tailwind.config.js": "Tailwind configuration with custom color tokens, Inter font family, and extended design system."
+}

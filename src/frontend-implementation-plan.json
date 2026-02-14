@@ -1,0 +1,342 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Coping & Support App (ADHD + Perimenopause) — Frontend",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create the core information architecture and working navigation for Home, Coping Toolkit, Library, Daily Check-in, Journal, and Saved/Favorites.",
+      "acceptanceCriteria": [
+        "App has a clear primary navigation to Home, Coping Toolkit, Library, Daily Check-in, Journal, and Saved/Favorites.",
+        "Each section has an initial screen with readable English headings and short supportive copy appropriate for the target audience.",
+        "Navigation works end-to-end with no dead links."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the app shell with primary navigation and route wiring for Home, Coping Toolkit, Library, Daily Check-in, Journal, and Saved/Favorites. Use shadcn-ui components (e.g., navigation, buttons) to ensure consistent UI; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/routes/routes.tsx",
+          "operation": "create",
+          "description": "Define the route map (path-to-screen) for all required sections and detail views created later (Toolkit detail, Topic detail, Check-in detail)."
+        },
+        {
+          "path": "frontend/src/components/PrimaryNav.tsx",
+          "operation": "create",
+          "description": "Implement a reusable primary navigation component used by the App shell. Use shadcn-ui components for accessible navigation and consistent styling; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "create",
+          "description": "Create the Home screen with supportive headings/copy and links to the main sections (no dead links)."
+        },
+        {
+          "path": "frontend/src/pages/Toolkit/ToolkitListPage.tsx",
+          "operation": "create",
+          "description": "Create the Coping Toolkit initial list screen shell (data wiring and filtering handled under REQ-3)."
+        },
+        {
+          "path": "frontend/src/pages/Library/LibraryListPage.tsx",
+          "operation": "create",
+          "description": "Create the Library initial list screen shell (content and disclaimer handled under REQ-4)."
+        },
+        {
+          "path": "frontend/src/pages/CheckIn/CheckInPage.tsx",
+          "operation": "create",
+          "description": "Create the Daily Check-in initial screen shell (flow, saving, history handled under REQ-5 and REQ-8)."
+        },
+        {
+          "path": "frontend/src/pages/Journal/JournalPage.tsx",
+          "operation": "create",
+          "description": "Create the Journal initial screen shell (CRUD and prompts handled under REQ-6 and REQ-8)."
+        },
+        {
+          "path": "frontend/src/pages/Saved/SavedPage.tsx",
+          "operation": "create",
+          "description": "Create the Saved/Favorites initial screen shell (save/unsave wiring handled under REQ-7 and REQ-8)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Implement a calm, supportive design system (avoid blue/purple as primary) with consistent typography, spacing, and component styling.",
+      "acceptanceCriteria": [
+        "UI uses a consistent palette, typography scale, and component styling across all screens.",
+        "Theme feels calm and readable (high contrast, comfortable line length, large tap targets).",
+        "Blue/purple are not used as the primary brand colors."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/theme/tokens.ts",
+          "operation": "create",
+          "description": "Define theme tokens (earthy/sage/terracotta-forward palette, typography scale, spacing, radii) to be referenced across the UI; ensure primary brand colors are not blue/purple."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Adjust Tailwind theme configuration to reflect the new calm palette and readability defaults (e.g., comfortable container widths, spacing, radii) and map tokens to CSS variables where appropriate."
+        },
+        {
+          "path": "frontend/src/styles/theme.css",
+          "operation": "create",
+          "description": "Add global CSS variables for the design system (background/foreground/primary/etc.) using earthy tones; avoid blue/purple as primary."
+        },
+        {
+          "path": "frontend/src/main.tsx",
+          "operation": "modify",
+          "description": "Ensure the global theme stylesheet is imported/applied (e.g., import frontend/src/styles/theme.css) and keep the app wrapped in QueryClientProvider and InternetIdentityProvider."
+        },
+        {
+          "path": "frontend/src/components/AppLayout.tsx",
+          "operation": "create",
+          "description": "Create a shared layout component that enforces consistent spacing, comfortable line length, and large tap targets across screens. Use shadcn-ui primitives for consistent styling; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Build Coping Toolkit browsing with backend-loaded cards, category filtering, and a detail view with steps/tips.",
+      "acceptanceCriteria": [
+        "Toolkit displays a list/grid of coping mechanism cards with title, short summary, and category tags.",
+        "Users can filter by at least one category and see results update.",
+        "Selecting a card opens a detail view with steps and tips written in English.",
+        "Coping mechanisms are loaded from the backend and render consistently on refresh."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useCopingMechanisms.ts",
+          "operation": "create",
+          "description": "Add React Query hooks to load coping mechanisms from the backend capability (e.g., getCopingMechanisms and getCopingMechanismsByCategory) via useActor, including loading/error states."
+        },
+        {
+          "path": "frontend/src/pages/Toolkit/ToolkitListPage.tsx",
+          "operation": "modify",
+          "description": "Implement the Toolkit list/grid UI with cards, category filter controls, and navigation to a detail view. Use shadcn-ui components (e.g., Card, Badge, Tabs/Select/Button) for accessible filtering UI; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/Toolkit/ToolkitDetailPage.tsx",
+          "operation": "create",
+          "description": "Create a coping mechanism detail page that renders title, category tags, and English steps/tips sourced from the backend fields. Use shadcn-ui components for consistent layout; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/routes/routes.tsx",
+          "operation": "modify",
+          "description": "Wire the Toolkit detail route so selecting a card navigates to a working detail view (no dead links)."
+        },
+        {
+          "path": "frontend/src/components/Toolkit/CopingCard.tsx",
+          "operation": "create",
+          "description": "Add a reusable coping mechanism card component showing title, short summary, and category tags. Use shadcn-ui Card/Badge primitives for consistent visuals; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Create a Library section with structured educational topics and a visible not-medical-advice disclaimer.",
+      "acceptanceCriteria": [
+        "Library lists multiple topics with title and short description.",
+        "Each topic has a readable detail page with headings and bullet points.",
+        "A visible disclaimer states content is informational and not medical advice."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/content/libraryTopics.ts",
+          "operation": "create",
+          "description": "Add curated, structured educational topic content tailored to ADHD + perimenopause (e.g., hormones & attention, overwhelm loops, sensory sensitivity, sleep changes), including short descriptions and detail sections with headings/bullets."
+        },
+        {
+          "path": "frontend/src/pages/Library/LibraryListPage.tsx",
+          "operation": "modify",
+          "description": "Render the list of topics with title/description and include a visible friendly disclaimer (informational, not medical advice). Use shadcn-ui components for list presentation; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/Library/TopicDetailPage.tsx",
+          "operation": "create",
+          "description": "Create a topic detail screen with readable headings and bullet points, and show the disclaimer in a visible placement. Use shadcn-ui components for typography and spacing consistency; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/routes/routes.tsx",
+          "operation": "modify",
+          "description": "Wire the Topic detail route from the Library list so navigation is end-to-end with no dead links."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Implement a fast Daily Check-in flow with simple controls, optional notes, and a history list with detail view.",
+      "acceptanceCriteria": [
+        "Daily Check-in can be completed in under ~30 seconds (minimal required fields).",
+        "Check-ins are saved and can be viewed in a simple history list by date.",
+        "User can open a past check-in to view details."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useDailyCheckIns.ts",
+          "operation": "create",
+          "description": "Add React Query hooks for creating and listing check-ins using backend capabilities (e.g., addDailyCheckIn, getDailyCheckIns) and integrate with useActor."
+        },
+        {
+          "path": "frontend/src/pages/CheckIn/CheckInPage.tsx",
+          "operation": "modify",
+          "description": "Implement the quick check-in UI (simple sliders/buttons for focus/mood/energy/sleep/hot flashes/anxiety/irritability plus optional notes), and show a history list by date. Use shadcn-ui controls (e.g., Slider, Button, Textarea) for large tap targets and consistent styling; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/CheckIn/CheckInDetailPage.tsx",
+          "operation": "create",
+          "description": "Create a read-only check-in detail view for a selected past entry with a clear, readable layout. Use shadcn-ui components for consistent UI; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/routes/routes.tsx",
+          "operation": "modify",
+          "description": "Wire the check-in detail route and ensure history items navigate to the correct detail view."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Add a Journal feature with optional prompts and free-form entries with create/view/delete that persist per authenticated user.",
+      "acceptanceCriteria": [
+        "Users can create, view, and delete journal entries.",
+        "Journal supports optional prompt selection and free-form text.",
+        "Entries are associated with the signed-in user and persist across sessions."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useJournal.ts",
+          "operation": "create",
+          "description": "Add React Query hooks for prompts and journal CRUD using backend capabilities (e.g., getPrompts, addJournalEntry, getJournalEntries) via useActor."
+        },
+        {
+          "path": "frontend/src/pages/Journal/JournalPage.tsx",
+          "operation": "modify",
+          "description": "Implement journal entry creation with optional prompt selection and free-form text, list existing entries, and enable deletion from the UI. Use shadcn-ui components (e.g., Select, Textarea, Button, Card) for accessible form controls; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/Journal/JournalEntryCard.tsx",
+          "operation": "create",
+          "description": "Create a reusable entry card component for displaying prompt (if any), date, and entry excerpt/full text. Use shadcn-ui Card/Button primitives; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Add Saved/Favorites bookmarking for coping mechanisms and library topics, with a unified Saved screen and persistent state per user.",
+      "acceptanceCriteria": [
+        "Each coping mechanism/topic can be saved/unsaved from its detail view.",
+        "Saved items appear in a Saved/Favorites section.",
+        "Saved state persists across refresh and across devices when the same user signs in."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useSavedItems.ts",
+          "operation": "create",
+          "description": "Add React Query hooks for listing and toggling saved items using backend capabilities (e.g., getSavedItems plus appropriate add/remove functions available on the actor) via useActor."
+        },
+        {
+          "path": "frontend/src/pages/Saved/SavedPage.tsx",
+          "operation": "modify",
+          "description": "Implement the Saved/Favorites screen showing saved coping mechanisms and topics together (with clear labels and navigation back to each item's detail). Use shadcn-ui list/card components for consistent UI; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/Toolkit/ToolkitDetailPage.tsx",
+          "operation": "modify",
+          "description": "Add save/unsave control to coping mechanism detail and reflect saved state. Use shadcn-ui Button/Toggle-like components; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/Library/TopicDetailPage.tsx",
+          "operation": "modify",
+          "description": "Add save/unsave control to topic detail and reflect saved state. Use shadcn-ui Button/Toggle-like components; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Implement Internet Identity sign-in, profile setup, and guards so user-specific actions/data are scoped to the authenticated principal while keeping Toolkit/Library browsable when signed out.",
+      "acceptanceCriteria": [
+        "User can sign in and sign out using Internet Identity.",
+        "Unauthenticated users can browse Library/Toolkit but cannot create check-ins/journal entries or save favorites (or they are prompted to sign in).",
+        "Authenticated users see their own check-ins/journal/saved items and not other users’ data."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/auth/LoginButton.tsx",
+          "operation": "create",
+          "description": "Add a login/logout button using the authorization component’s Internet Identity guidance (useInternetIdentity + react-query cache clear on logout). Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/hooks/useUserProfile.ts",
+          "operation": "create",
+          "description": "Implement profile loading/saving hooks using backend capabilities (getCallerUserProfile, saveCallerUserProfile) with the authorization component’s recommended loading-state pattern to prevent profile setup modal flash. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/auth/ProfileSetupModal.tsx",
+          "operation": "create",
+          "description": "Create a first-login profile setup modal to ask for a friendly display name and save it; avoid showing the principal id. Use shadcn-ui dialog/form components for accessibility and consistent styling; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/auth/RequireAuth.tsx",
+          "operation": "create",
+          "description": "Add a guard/wrapper component that allows read-only browsing screens (Toolkit/Library) for guests, and gates user-specific actions (check-ins, journal CRUD, saving) with a sign-in prompt. Use the authorization component guidance for handling unauthorized errors gracefully; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire LoginButton into the primary layout, show the signed-in user’s profile name when available, and mount ProfileSetupModal only when authenticated and profile is missing. Verify the authorization component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/CheckIn/CheckInPage.tsx",
+          "operation": "modify",
+          "description": "Gate check-in creation/history behind authentication (or prompt to sign in), while keeping overall navigation intact. Verify the authorization component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/Journal/JournalPage.tsx",
+          "operation": "modify",
+          "description": "Gate journal creation/list/deletion behind authentication (or prompt to sign in). Verify the authorization component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/Saved/SavedPage.tsx",
+          "operation": "modify",
+          "description": "Gate saved items listing/toggling behind authentication (or prompt to sign in). Verify the authorization component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Add generated static illustrations under frontend/public/assets/generated and reference them in Home and at least one empty state (no backend image routing).",
+      "acceptanceCriteria": [
+        "Generated images are present under frontend/public/assets/generated and referenced directly by the frontend.",
+        "Home and at least one empty state screen displays one of the generated images.",
+        "App loads and renders images correctly in production build."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/home-hero.dim_1600x900.png",
+          "operation": "create",
+          "description": "Add the generated illustration asset exactly at frontend/public/assets/generated/home-hero.dim_1600x900.png for direct frontend use."
+        },
+        {
+          "path": "frontend/public/assets/generated/icon-set.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated icon set asset exactly at frontend/public/assets/generated/icon-set.dim_512x512.png for direct frontend use."
+        },
+        {
+          "path": "frontend/public/assets/generated/bg-texture.dim_1920x1080.png",
+          "operation": "create",
+          "description": "Add the generated background texture asset exactly at frontend/public/assets/generated/bg-texture.dim_1920x1080.png for direct frontend use."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Reference and display frontend/public/assets/generated/home-hero.dim_1600x900.png on the Home screen (hero area) and optionally use frontend/public/assets/generated/bg-texture.dim_1920x1080.png as a subtle background."
+        },
+        {
+          "path": "frontend/src/pages/Saved/SavedPage.tsx",
+          "operation": "modify",
+          "description": "Add an empty state that displays frontend/public/assets/generated/icon-set.dim_512x512.png when there are no saved items (or user is signed out and cannot view saved items)."
+        }
+      ]
+    }
+  ]
+}

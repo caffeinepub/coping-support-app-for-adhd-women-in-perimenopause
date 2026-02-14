@@ -1,0 +1,85 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-14T23:29:26.562Z",
+  "summary": "Diff adds a full frontend app shell with TanStack Router navigation (Home/Toolkit/Library/Check-in/Journal/Saved), a calm earthy Tailwind theme, Internet Identity auth hooks/components, and a Motoko backend actor with types and some data structures for coping mechanisms/check-ins/journal/saved items plus additional access-control/profile logic. Several requested behaviors are visible (navigation, check-in/journal flows, library disclaimer, II sign-in gating), but some requirements are not evidenced (notably backend topics listing + stable persistence patterns, and saved unsave from detail views).",
+  "missing_requirements": [
+    {
+      "id": "REQ-7",
+      "requirement": "Saved/Favorites supports save and unsave from coping mechanism and topic detail views, and saved items appear in a Saved/Favorites section with persistence across refresh/devices when signed in.",
+      "reason": "Topic detail shows only an 'add to saved' flow and explicitly blocks saving if already saved; no unsave action is shown. Coping mechanism detail and Saved page behavior are not evidenced in the provided diff summary.",
+      "evidence": [
+        "frontend/src/pages/Library/TopicDetailPage.tsx (handleSave: blocks if isSaved; no unsave path shown)",
+        "frontend/src/App.tsx (route '/saved' exists but implementation not shown)",
+        "frontend/src/pages/Toolkit/ToolkitDetailPage (file referenced but contents not shown)"
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "requirement": "Backend exposes Motoko actor methods to list coping mechanisms and topics, and CRUD user-specific records (check-ins, journal entries, saved items) with stable persistence across upgrades.",
+      "reason": "The backend file is truncated and, in the visible portion, only coping mechanisms are defined; no 'Topic' type or topic-listing methods are shown. Also, no stable variables or upgrade hooks (e.g., stable storage patterns) are visible in the shown portion, so stable persistence cannot be verified from this diff summary.",
+      "evidence": [
+        "backend/main.mo (visible portion shows CopingMechanism/DailyCheckIn/JournalEntry/SavedItem types and copingMechanisms seed list; no Topic type/methods shown; no stable storage shown)"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "User profile onboarding (ProfileSetupModal) and profile management methods in backend (getCallerUserProfile/getUserProfile/save profile implied).",
+      "reason": "BuildRequest does not ask for user profiles or profile setup; only Internet Identity auth and scoping of user data were requested.",
+      "evidence": [
+        "frontend/src/components/auth/ProfileSetupModal.tsx",
+        "frontend/src/components/AppLayout.tsx (shows ProfileSetupModal based on missing profile)",
+        "backend/main.mo (defines UserProfile and getCallerUserProfile/getUserProfile in visible portion)"
+      ]
+    },
+    {
+      "description": "Custom access control / admin-token initialization via a secret URL parameter ('caffeineAdminToken') and authorization mixins.",
+      "reason": "BuildRequest specifies only Internet Identity for authentication and no third-party auth providers; it does not request an admin-token mechanism or custom access-control framework.",
+      "evidence": [
+        "frontend/src/hooks/useActor.ts (getSecretParameter('caffeineAdminToken'); calls actor._initializeAccessControlWithSecret)",
+        "backend/main.mo (imports authorization/MixinAuthorization and authorization/access-control; initializes access control state)"
+      ]
+    },
+    {
+      "description": "Footer includes a promotional/attribution link to caffeine.ai with UTM parameters.",
+      "reason": "Not requested in requirements or acceptance criteria.",
+      "evidence": [
+        "frontend/src/components/Footer.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.68,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/AppLayout.tsx",
+    "frontend/src/components/Footer.tsx",
+    "frontend/src/components/PrimaryNav.tsx",
+    "frontend/src/components/auth/LoginButton.tsx",
+    "frontend/src/components/auth/ProfileSetupModal.tsx",
+    "frontend/src/components/auth/RequireAuth.tsx",
+    "frontend/src/content/libraryTopics.ts",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/CheckIn/CheckInDetailPage.tsx",
+    "frontend/src/pages/CheckIn/CheckInPage.tsx",
+    "frontend/src/pages/HomePage.tsx",
+    "frontend/src/pages/Journal/JournalPage.tsx",
+    "frontend/src/pages/Library/LibraryListPage.tsx",
+    "frontend/src/pages/Library/TopicDetailPage.tsx",
+    "frontend/src/pages/Saved/SavedPage.tsx",
+    "frontend/src/pages/Toolkit/ToolkitDetailPage.tsx",
+    "frontend/src/pages/Toolkit/ToolkitListPage.tsx",
+    "frontend/src/utils/urlParams.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

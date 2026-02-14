@@ -1,0 +1,198 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-the-core-app-information-architecture-and-navigation-for-an-app-focused-on-adhd-women-in-perimenopause-with-sections-for-home-coping-toolkit-topics-library-daily-check-in-journal-and-saved-favorites",
+      "featureTitle": "Create the core app information architecture and navigation for an app focused on ADHD women in perimenopause, with sections for: Home, Coping Toolkit, Topics/Library, Daily Check-in, Journal, and Saved/Favorites.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/PrimaryNav.tsx",
+        "frontend/src/pages/CheckIn/CheckInPage.tsx",
+        "frontend/src/pages/HomePage.tsx",
+        "frontend/src/pages/Journal/JournalPage.tsx",
+        "frontend/src/pages/Library/LibraryListPage.tsx",
+        "frontend/src/pages/Saved/SavedPage.tsx",
+        "frontend/src/pages/Toolkit/ToolkitListPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-coherent-visual-theme-and-design-system-for-the-app-colors-typography-spacing-components-with-a-calm-supportive-style-suitable-for-perimenopause-adhd-avoid-blue-purple-as-primary-colors",
+      "featureTitle": "Implement a coherent visual theme and design system for the app (colors, typography, spacing, components) with a calm, supportive style suitable for perimenopause + ADHD. Avoid blue/purple as primary colors.",
+      "files": [
+        "frontend/src/components/AppLayout.tsx",
+        "frontend/src/main.tsx",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-coping-toolkit-feature-that-lets-users-browse-coping-mechanisms-as-cards-and-filter-by-category-e-g-focus-executive-function-emotional-regulation-sleep-hot-flashes-night-sweats-brain-fog-anxiety-relationships-work-self-care",
+      "featureTitle": "Build a Coping Toolkit feature that lets users browse coping mechanisms as cards and filter by category (e.g., Focus/Executive Function, Emotional Regulation, Sleep, Hot Flashes/Night Sweats, Brain Fog, Anxiety, Relationships, Work, Self-care).",
+      "files": [
+        "frontend/src/pages/Toolkit/ToolkitDetailPage.tsx",
+        "frontend/src/pages/Toolkit/ToolkitListPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-topics-library-section-with-short-structured-educational-content-tailored-to-adhd-perimenopause-e-g-hormones-attention-overwhelm-loops-sensory-sensitivity-sleep-changes-include-a-friendly-disclaimer-that-the-content-is-not-medical-advice",
+      "featureTitle": "Create a Topics/Library section with short, structured educational content tailored to ADHD + perimenopause (e.g., hormones & attention, overwhelm loops, sensory sensitivity, sleep changes). Include a friendly disclaimer that the content is not medical advice.",
+      "files": [
+        "frontend/src/content/libraryTopics.ts",
+        "frontend/src/pages/Library/LibraryListPage.tsx",
+        "frontend/src/pages/Library/TopicDetailPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-daily-check-in-flow-where-users-can-quickly-log-today-s-state-using-simple-sliders-buttons-e-g-focus-mood-energy-sleep-quality-hot-flash-severity-anxiety-irritability-and-optional-notes",
+      "featureTitle": "Implement a Daily Check-in flow where users can quickly log today’s state using simple sliders/buttons (e.g., focus, mood, energy, sleep quality, hot flash severity, anxiety/irritability) and optional notes.",
+      "files": [
+        "frontend/src/pages/CheckIn/CheckInDetailPage.tsx",
+        "frontend/src/pages/CheckIn/CheckInPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-journal-feature-for-free-form-entries-with-optional-prompts-relevant-to-the-audience-e-g-what-felt-hardest-today-what-helped-even-a-little-what-s-one-kind-thing-i-can-do-for-myself",
+      "featureTitle": "Add a Journal feature for free-form entries with optional prompts relevant to the audience (e.g., ‘What felt hardest today?’, ‘What helped even a little?’, ‘What’s one kind thing I can do for myself?’).",
+      "files": [
+        "frontend/src/pages/Journal/JournalPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-saved-favorites-so-users-can-bookmark-coping-mechanisms-and-library-topics-and-access-them-in-one-place",
+      "featureTitle": "Add Saved/Favorites so users can bookmark coping mechanisms and library topics and access them in one place.",
+      "files": [
+        "frontend/src/pages/Library/TopicDetailPage.tsx",
+        "frontend/src/pages/Saved/SavedPage.tsx",
+        "frontend/src/pages/Toolkit/ToolkitDetailPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-internet-identity-sign-in-and-ensure-all-user-specific-data-check-ins-journal-entries-saved-items-is-scoped-to-the-authenticated-user-principal-allow-read-only-browsing-of-general-content-without-sign-in",
+      "featureTitle": "Implement Internet Identity sign-in and ensure all user-specific data (check-ins, journal entries, saved items) is scoped to the authenticated user principal; allow read-only browsing of general content without sign-in.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/auth/LoginButton.tsx",
+        "frontend/src/components/auth/ProfileSetupModal.tsx",
+        "frontend/src/components/auth/RequireAuth.tsx",
+        "frontend/src/pages/CheckIn/CheckInPage.tsx",
+        "frontend/src/pages/Journal/JournalPage.tsx",
+        "frontend/src/pages/Saved/SavedPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-generated-static-illustrations-and-use-them-in-the-ui-e-g-on-home-and-empty-states-from-frontend-public-assets-generated-without-routing-images-through-the-backend",
+      "featureTitle": "Add generated static illustrations and use them in the UI (e.g., on Home and empty states) from frontend/public/assets/generated, without routing images through the backend.",
+      "files": [
+        "frontend/src/pages/HomePage.tsx",
+        "frontend/src/pages/Saved/SavedPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

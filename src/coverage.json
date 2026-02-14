@@ -1,0 +1,305 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-14T23:29:26.565Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 10,
+    "implemented": 9,
+    "items": [
+      {
+        "id": "REQ-1",
+        "summary": "Create the core app information architecture and navigation for an app focused on ADHD women in perimenopause, with sections for: Home, Coping Toolkit, Topics/Library, Daily Check-in, Journal, and Saved/Favorites.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/App.tsx",
+          "frontend/src/routes/routes.tsx",
+          "frontend/src/components/PrimaryNav.tsx",
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/Toolkit/ToolkitListPage.tsx",
+          "frontend/src/pages/Library/LibraryListPage.tsx",
+          "frontend/src/pages/CheckIn/CheckInPage.tsx",
+          "frontend/src/pages/Journal/JournalPage.tsx",
+          "frontend/src/pages/Saved/SavedPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/App.tsx",
+          "frontend/src/components/PrimaryNav.tsx",
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/Toolkit/ToolkitListPage.tsx",
+          "frontend/src/pages/Library/LibraryListPage.tsx",
+          "frontend/src/pages/CheckIn/CheckInPage.tsx",
+          "frontend/src/pages/Journal/JournalPage.tsx",
+          "frontend/src/pages/Saved/SavedPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-10",
+        "summary": "Add generated static illustrations and use them in the UI (e.g., on Home and empty states) from frontend/public/assets/generated, without routing images through the backend.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/public/assets/generated/home-hero.dim_1600x900.png",
+          "frontend/public/assets/generated/icon-set.dim_512x512.png",
+          "frontend/public/assets/generated/bg-texture.dim_1920x1080.png",
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/Saved/SavedPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/public/assets/generated/home-hero.dim_1600x900.png",
+          "frontend/public/assets/generated/icon-set.dim_512x512.png",
+          "frontend/public/assets/generated/bg-texture.dim_1920x1080.png",
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/Saved/SavedPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-2",
+        "summary": "Implement a coherent visual theme and design system for the app (colors, typography, spacing, components) with a calm, supportive style suitable for perimenopause + ADHD. Avoid blue/purple as primary colors.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/theme/tokens.ts",
+          "frontend/tailwind.config.js",
+          "frontend/src/styles/theme.css",
+          "frontend/src/main.tsx",
+          "frontend/src/components/AppLayout.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/tailwind.config.js",
+          "frontend/src/main.tsx",
+          "frontend/src/components/AppLayout.tsx"
+        ]
+      },
+      {
+        "id": "REQ-3",
+        "summary": "Build a Coping Toolkit feature that lets users browse coping mechanisms as cards and filter by category (e.g., Focus/Executive Function, Emotional Regulation, Sleep, Hot Flashes/Night Sweats, Brain Fog, Anxiety, Relationships, Work, Self-care).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/hooks/useCopingMechanisms.ts",
+          "frontend/src/pages/Toolkit/ToolkitListPage.tsx",
+          "frontend/src/pages/Toolkit/ToolkitDetailPage.tsx",
+          "frontend/src/routes/routes.tsx",
+          "frontend/src/components/Toolkit/CopingCard.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/Toolkit/ToolkitListPage.tsx",
+          "frontend/src/pages/Toolkit/ToolkitDetailPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-4",
+        "summary": "Create a Topics/Library section with short, structured educational content tailored to ADHD + perimenopause (e.g., hormones & attention, overwhelm loops, sensory sensitivity, sleep changes). Include a friendly disclaimer that the content is not medical advice.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/content/libraryTopics.ts",
+          "frontend/src/pages/Library/LibraryListPage.tsx",
+          "frontend/src/pages/Library/TopicDetailPage.tsx",
+          "frontend/src/routes/routes.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/content/libraryTopics.ts",
+          "frontend/src/pages/Library/LibraryListPage.tsx",
+          "frontend/src/pages/Library/TopicDetailPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-5",
+        "summary": "Implement a Daily Check-in flow where users can quickly log today’s state using simple sliders/buttons (e.g., focus, mood, energy, sleep quality, hot flash severity, anxiety/irritability) and optional notes.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/hooks/useDailyCheckIns.ts",
+          "frontend/src/pages/CheckIn/CheckInPage.tsx",
+          "frontend/src/pages/CheckIn/CheckInDetailPage.tsx",
+          "frontend/src/routes/routes.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/CheckIn/CheckInPage.tsx",
+          "frontend/src/pages/CheckIn/CheckInDetailPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-6",
+        "summary": "Add a Journal feature for free-form entries with optional prompts relevant to the audience (e.g., ‘What felt hardest today?’, ‘What helped even a little?’, ‘What’s one kind thing I can do for myself?’).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/hooks/useJournal.ts",
+          "frontend/src/pages/Journal/JournalPage.tsx",
+          "frontend/src/components/Journal/JournalEntryCard.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/Journal/JournalPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-7",
+        "summary": "Add Saved/Favorites so users can bookmark coping mechanisms and library topics and access them in one place.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/hooks/useSavedItems.ts",
+          "frontend/src/pages/Saved/SavedPage.tsx",
+          "frontend/src/pages/Toolkit/ToolkitDetailPage.tsx",
+          "frontend/src/pages/Library/TopicDetailPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/Saved/SavedPage.tsx",
+          "frontend/src/pages/Toolkit/ToolkitDetailPage.tsx",
+          "frontend/src/pages/Library/TopicDetailPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-8",
+        "summary": "Implement Internet Identity sign-in and ensure all user-specific data (check-ins, journal entries, saved items) is scoped to the authenticated user principal; allow read-only browsing of general content without sign-in.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/auth/LoginButton.tsx",
+          "frontend/src/hooks/useUserProfile.ts",
+          "frontend/src/components/auth/ProfileSetupModal.tsx",
+          "frontend/src/components/auth/RequireAuth.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/pages/CheckIn/CheckInPage.tsx",
+          "frontend/src/pages/Journal/JournalPage.tsx",
+          "frontend/src/pages/Saved/SavedPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/auth/LoginButton.tsx",
+          "frontend/src/components/auth/ProfileSetupModal.tsx",
+          "frontend/src/components/auth/RequireAuth.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/pages/CheckIn/CheckInPage.tsx",
+          "frontend/src/pages/Journal/JournalPage.tsx",
+          "frontend/src/pages/Saved/SavedPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-9",
+        "summary": "Backend: define and expose Motoko actor methods to (1) list coping mechanisms and topics, and (2) CRUD user-specific records (check-ins, journal entries, saved items) with stable persistence.",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      }
+    ]
+  },
+  "changedFiles": [
+    "backend/authorization/MixinAuthorization.mo",
+    "backend/authorization/access-control.mo",
+    "backend/main.mo",
+    "build-request.json",
+    "build-template/Dockerfile",
+    "build-template/LICENSE",
+    "build-template/README.md",
+    "build-template/deploy.sh",
+    "build-template/icp.yaml",
+    "build-template/package.json",
+    "build-template/pnpm-lock.yaml",
+    "build-template/pnpm-workspace.yaml",
+    "build-template/scripts/prune-unused-images.js",
+    "build-template/scripts/resize-images.js",
+    "build-template/src/backend/canister.yaml",
+    "build-template/src/backend/system-idl/aaaaa-aa.did",
+    "build-template/src/frontend/canister.yaml",
+    "build-template/src/frontend/components.json",
+    "build-template/src/frontend/env.json",
+    "build-template/src/frontend/eslint-rules/no-bigint-in-query-keys.js",
+    "build-template/src/frontend/eslint-rules/require-internet-identity-provider.js",
+    "build-template/src/frontend/eslint.config.js",
+    "build-template/src/frontend/package.json",
+    "build-template/src/frontend/postcss.config.js",
+    "build-template/src/frontend/src/components/ui/accordion.tsx",
+    "build-template/src/frontend/src/components/ui/alert-dialog.tsx",
+    "build-template/src/frontend/src/components/ui/alert.tsx",
+    "build-template/src/frontend/src/components/ui/aspect-ratio.tsx",
+    "build-template/src/frontend/src/components/ui/avatar.tsx",
+    "build-template/src/frontend/src/components/ui/badge.tsx",
+    "build-template/src/frontend/src/components/ui/breadcrumb.tsx",
+    "build-template/src/frontend/src/components/ui/button.tsx",
+    "build-template/src/frontend/src/components/ui/calendar.tsx",
+    "build-template/src/frontend/src/components/ui/card.tsx",
+    "build-template/src/frontend/src/components/ui/carousel.tsx",
+    "build-template/src/frontend/src/components/ui/chart.tsx",
+    "build-template/src/frontend/src/components/ui/checkbox.tsx",
+    "build-template/src/frontend/src/components/ui/collapsible.tsx",
+    "build-template/src/frontend/src/components/ui/command.tsx",
+    "build-template/src/frontend/src/components/ui/context-menu.tsx",
+    "build-template/src/frontend/src/components/ui/dialog.tsx",
+    "build-template/src/frontend/src/components/ui/drawer.tsx",
+    "build-template/src/frontend/src/components/ui/dropdown-menu.tsx",
+    "build-template/src/frontend/src/components/ui/form.tsx",
+    "build-template/src/frontend/src/components/ui/hover-card.tsx",
+    "build-template/src/frontend/src/components/ui/input-otp.tsx",
+    "build-template/src/frontend/src/components/ui/input.tsx",
+    "build-template/src/frontend/src/components/ui/label.tsx",
+    "build-template/src/frontend/src/components/ui/menubar.tsx",
+    "build-template/src/frontend/src/components/ui/navigation-menu.tsx",
+    "build-template/src/frontend/src/components/ui/pagination.tsx",
+    "build-template/src/frontend/src/components/ui/popover.tsx",
+    "build-template/src/frontend/src/components/ui/progress.tsx",
+    "build-template/src/frontend/src/components/ui/radio-group.tsx",
+    "build-template/src/frontend/src/components/ui/resizable.tsx",
+    "build-template/src/frontend/src/components/ui/scroll-area.tsx",
+    "build-template/src/frontend/src/components/ui/select.tsx",
+    "build-template/src/frontend/src/components/ui/separator.tsx",
+    "build-template/src/frontend/src/components/ui/sheet.tsx",
+    "build-template/src/frontend/src/components/ui/sidebar.tsx",
+    "build-template/src/frontend/src/components/ui/skeleton.tsx",
+    "build-template/src/frontend/src/components/ui/slider.tsx",
+    "build-template/src/frontend/src/components/ui/sonner.tsx",
+    "build-template/src/frontend/src/components/ui/switch.tsx",
+    "build-template/src/frontend/src/components/ui/table.tsx",
+    "build-template/src/frontend/src/components/ui/tabs.tsx",
+    "build-template/src/frontend/src/components/ui/textarea.tsx",
+    "build-template/src/frontend/src/components/ui/toggle-group.tsx",
+    "build-template/src/frontend/src/components/ui/toggle.tsx",
+    "build-template/src/frontend/src/components/ui/tooltip.tsx",
+    "build-template/src/frontend/src/hooks/use-mobile.tsx",
+    "build-template/src/frontend/src/lib/utils.ts",
+    "build-template/src/frontend/tsconfig.json",
+    "build-template/src/frontend/vite.config.js",
+    "build-template/tsconfig.json",
+    "caffeine.lock.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/public/assets/generated/bg-texture.dim_1920x1080.png",
+    "frontend/public/assets/generated/home-hero.dim_1600x900.png",
+    "frontend/public/assets/generated/icon-set.dim_512x512.png",
+    "frontend/src/App.tsx",
+    "frontend/src/backend.d.ts",
+    "frontend/src/backend.ts",
+    "frontend/src/components/AppLayout.tsx",
+    "frontend/src/components/Footer.tsx",
+    "frontend/src/components/PrimaryNav.tsx",
+    "frontend/src/components/auth/LoginButton.tsx",
+    "frontend/src/components/auth/ProfileSetupModal.tsx",
+    "frontend/src/components/auth/RequireAuth.tsx",
+    "frontend/src/config.ts",
+    "frontend/src/content/libraryTopics.ts",
+    "frontend/src/declarations/backend.did.d.ts",
+    "frontend/src/declarations/backend.did.js",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/CheckIn/CheckInDetailPage.tsx",
+    "frontend/src/pages/CheckIn/CheckInPage.tsx",
+    "frontend/src/pages/HomePage.tsx",
+    "frontend/src/pages/Journal/JournalPage.tsx",
+    "frontend/src/pages/Library/LibraryListPage.tsx",
+    "frontend/src/pages/Library/TopicDetailPage.tsx",
+    "frontend/src/pages/Saved/SavedPage.tsx",
+    "frontend/src/pages/Toolkit/ToolkitDetailPage.tsx",
+    "frontend/src/pages/Toolkit/ToolkitListPage.tsx",
+    "frontend/src/ui-summary.json",
+    "frontend/src/utils/StorageClient.ts",
+    "frontend/src/utils/urlParams.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

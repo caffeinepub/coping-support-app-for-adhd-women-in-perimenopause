@@ -1,2 +1,3 @@
-# coping-support-app-for-adhd-women-in-perimenopause
-Exported from Caffeine project: Coping &amp; Support App for ADHD Women in Perimenopause
+## Coping &amp; Support App for ADHD Women in Perimenopause
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`

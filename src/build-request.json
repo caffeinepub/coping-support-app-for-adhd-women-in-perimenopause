@@ -1,0 +1,207 @@
+{
+  "kind": "build_request",
+  "title": "Coping & Support App for ADHD Women in Perimenopause",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create the core app information architecture and navigation for an app focused on ADHD women in perimenopause, with sections for: Home, Coping Toolkit, Topics/Library, Daily Check-in, Journal, and Saved/Favorites.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Create an app for ADHD women in perimonopause with help and ideas on coping mechanisms"
+        ]
+      },
+      "acceptanceCriteria": [
+        "App has a clear primary navigation to Home, Coping Toolkit, Library, Daily Check-in, Journal, and Saved/Favorites.",
+        "Each section has an initial screen with readable English headings and short supportive copy appropriate for the target audience.",
+        "Navigation works end-to-end with no dead links."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement a coherent visual theme and design system for the app (colors, typography, spacing, components) with a calm, supportive style suitable for perimenopause + ADHD. Avoid blue/purple as primary colors.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Create an app for ADHD women in perimonopause with help and ideas on coping mechanisms"
+        ]
+      },
+      "acceptanceCriteria": [
+        "UI uses a consistent palette, typography scale, and component styling across all screens.",
+        "Theme feels calm and readable (high contrast, comfortable line length, large tap targets).",
+        "Blue/purple are not used as the primary brand colors."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Build a Coping Toolkit feature that lets users browse coping mechanisms as cards and filter by category (e.g., Focus/Executive Function, Emotional Regulation, Sleep, Hot Flashes/Night Sweats, Brain Fog, Anxiety, Relationships, Work, Self-care).",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "help and ideas on coping mechanisms"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Toolkit displays a list/grid of coping mechanism cards with title, short summary, and category tags.",
+        "Users can filter by at least one category and see results update.",
+        "Selecting a card opens a detail view with steps and tips written in English.",
+        "Coping mechanisms are loaded from the backend and render consistently on refresh."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Create a Topics/Library section with short, structured educational content tailored to ADHD + perimenopause (e.g., hormones & attention, overwhelm loops, sensory sensitivity, sleep changes). Include a friendly disclaimer that the content is not medical advice.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "app for ADHD women in perimonopause with help and ideas"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Library lists multiple topics with title and short description.",
+        "Each topic has a readable detail page with headings and bullet points.",
+        "A visible disclaimer states content is informational and not medical advice."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Implement a Daily Check-in flow where users can quickly log today’s state using simple sliders/buttons (e.g., focus, mood, energy, sleep quality, hot flash severity, anxiety/irritability) and optional notes.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "help and ideas on coping mechanisms"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Daily Check-in can be completed in under ~30 seconds (minimal required fields).",
+        "Check-ins are saved and can be viewed in a simple history list by date.",
+        "User can open a past check-in to view details."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Add a Journal feature for free-form entries with optional prompts relevant to the audience (e.g., ‘What felt hardest today?’, ‘What helped even a little?’, ‘What’s one kind thing I can do for myself?’).",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "help and ideas on coping mechanisms"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Users can create, view, and delete journal entries.",
+        "Journal supports optional prompt selection and free-form text.",
+        "Entries are associated with the signed-in user and persist across sessions."
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Add Saved/Favorites so users can bookmark coping mechanisms and library topics and access them in one place.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "help and ideas on coping mechanisms"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Each coping mechanism/topic can be saved/unsaved from its detail view.",
+        "Saved items appear in a Saved/Favorites section.",
+        "Saved state persists across refresh and across devices when the same user signs in."
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Implement Internet Identity sign-in and ensure all user-specific data (check-ins, journal entries, saved items) is scoped to the authenticated user principal; allow read-only browsing of general content without sign-in.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Create an app for ADHD women in perimonopause with help and ideas on coping mechanisms"
+        ]
+      },
+      "acceptanceCriteria": [
+        "User can sign in and sign out using Internet Identity.",
+        "Unauthenticated users can browse Library/Toolkit but cannot create check-ins/journal entries or save favorites (or they are prompted to sign in).",
+        "Authenticated users see their own check-ins/journal/saved items and not other users’ data."
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Backend: define and expose Motoko actor methods to (1) list coping mechanisms and topics, and (2) CRUD user-specific records (check-ins, journal entries, saved items) with stable persistence.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Create an app for ADHD women in perimonopause with help and ideas on coping mechanisms"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend provides query methods for listing coping mechanisms and topics.",
+        "Backend provides update methods for creating/deleting journal entries and creating/listing check-ins.",
+        "Backend provides methods to save/unsave and list saved items per user principal.",
+        "Data persists across canister upgrades using stable storage patterns; no cross-user data leakage occurs."
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Add generated static illustrations and use them in the UI (e.g., on Home and empty states) from frontend/public/assets/generated, without routing images through the backend.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Create an app for ADHD women in perimonopause with help and ideas on coping mechanisms"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Generated images are present under frontend/public/assets/generated and referenced directly by the frontend.",
+        "Home and at least one empty state screen displays one of the generated images.",
+        "App loads and renders images correctly in production build."
+      ]
+    }
+  ],
+  "constraints": [
+    "Backend must be implemented as a single Motoko actor (all logic in the main actor file).",
+    "Do not require or use external databases or third-party auth providers; only Internet Identity is allowed.",
+    "Do not implement real-time features (WebSockets) or push notifications."
+  ],
+  "nonGoals": [
+    "Medical diagnosis or personalized medical treatment recommendations.",
+    "Crisis response, emergency services integration, or hotline calling features.",
+    "Email/SMS notifications or push notifications."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Warm, calming abstract floral illustration with earthy tones (home-hero.dim_1600x900.png)",
+      "Minimal line-art icon set in warm neutral tones: brain, moon, heart, checklist (icon-set.dim_512x512.png)",
+      "Soft gradient background texture in sage/cream/terracotta palette (bg-texture.dim_1920x1080.png)"
+    ],
+    "edits": []
+  }
+}
